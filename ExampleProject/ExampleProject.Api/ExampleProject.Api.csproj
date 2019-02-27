@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ExampleProject.Core\ExampleProject.Core.csproj" />
     <ProjectReference Include="..\ExampleProject.DataAccess\ExampleProject.DataAccess.csproj" />
     <ProjectReference Include="..\ExampleProject.Data\ExampleProject.Data.csproj" />
     <ProjectReference Include="..\ExampleProject.Dto\ExampleProject.Dto.csproj" />
