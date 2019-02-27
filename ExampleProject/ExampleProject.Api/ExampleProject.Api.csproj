@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ExampleProject.DataAccess\ExampleProject.DataAccess.csproj" />
     <ProjectReference Include="..\ExampleProject.Data\ExampleProject.Data.csproj" />
+    <ProjectReference Include="..\ExampleProject.Dto\ExampleProject.Dto.csproj" />
   </ItemGroup>
 
 </Project>
