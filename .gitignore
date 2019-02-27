@@ -1,3 +1,4 @@
 ExampleProject/.vs/
-ExampleProject/ExampleProject/bin/
-ExampleProject/ExampleProject/obj/
+**/bin/
+**/obj/
+*.user
