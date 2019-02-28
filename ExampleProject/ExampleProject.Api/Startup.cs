@@ -1,5 +1,6 @@
 ﻿using ExampleProject.Api.Infrastructure.Mappings;
 using ExampleProject.DataAccess.Context;
+﻿using ExampleProject.Api.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,11 @@ namespace ExampleProject.Api
         {
 
             services.AddDbContext<ExampleDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options =>
+            {
+                options.ReturnHttpNotAcceptable = true;
+            })                
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +40,7 @@ namespace ExampleProject.Api
             }
             else
             {
+                app.UseExceptionHandler(appBuilder => appBuilder.AddExceptionHandler());
                 app.UseHsts();
             }
 
