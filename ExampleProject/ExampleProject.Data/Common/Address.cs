@@ -8,5 +8,10 @@ namespace ExampleProject.Data.Common
     {
         public string PostalCode { get; set; }
         public string City { get; set; }
+
+        public override string ToString()
+        {
+            return $"{PostalCode} {City}";
+        }
     }
 }
