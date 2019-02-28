@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using ExampleProject.Api.Infrastructure.Mappings.Configurations;
+using ExampleProject.Core.Infrastructure.Mappings.Configurations;
 
-namespace ExampleProject.Api.Infrastructure.Mappings
+namespace ExampleProject.Core.Infrastructure.Mappings
 {
-    internal static class MappingsActivator
+    public static class MappingsActivator
     {
         public static void Configure()
         {

@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExampleProject.Dto\ExampleProject.Dto.csproj" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mappings\" />
+    <ProjectReference Include="..\ExampleProject.DataAccess\ExampleProject.DataAccess.csproj" />
+    <ProjectReference Include="..\ExampleProject.Dto\ExampleProject.Dto.csproj" />
   </ItemGroup>
 
 </Project>
