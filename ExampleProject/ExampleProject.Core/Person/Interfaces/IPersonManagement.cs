@@ -6,5 +6,6 @@ namespace ExampleProject.Core.Person.Interfaces
     public interface IPersonManagement
     {
         IReadOnlyList<PersonDto> GetPersons();
+        PersonDto GetPersonById(int id);
     }
 }

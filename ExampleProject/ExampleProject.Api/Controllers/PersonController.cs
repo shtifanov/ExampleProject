@@ -20,5 +20,14 @@ namespace ExampleProject.Api.Controllers
             var result = _personManagement.GetPersons();
             return Ok(result);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetPerson(int id)
+        {
+            var person = _personManagement.GetPersonById(id);
+            if (person == null) return NotFound();
+            return Ok(person);
+        }
+
     }
 }

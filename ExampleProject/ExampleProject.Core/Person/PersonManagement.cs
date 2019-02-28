@@ -21,5 +21,10 @@ namespace ExampleProject.Core.Person
             return Mapper.Instance.ProjectTo<PersonDto>(_db.PersonRepository.Get()).ToList();
         }
 
+        public PersonDto GetPersonById(int id)
+        {
+            var person = Mapper.Instance.ProjectTo<PersonDto>(_db.PersonRepository.Get().Where(p => p.Id == id)).SingleOrDefault();
+            return person;
+        }
     }
 }
