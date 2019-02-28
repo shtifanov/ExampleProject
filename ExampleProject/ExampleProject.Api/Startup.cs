@@ -1,6 +1,6 @@
-﻿using ExampleProject.Api.Infrastructure.Mappings;
-using ExampleProject.DataAccess.Context;
 ﻿using ExampleProject.Api.Infrastructure.Extensions;
+using ExampleProject.Core.Infrastructure.Mappings;
+using ExampleProject.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -22,12 +22,13 @@ namespace ExampleProject.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddDbContext<ExampleDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            Core.IoC.DependencyInjector.Inject(services);
+            DataAccess.IoC.DependencyInjector.Inject(services);
             services.AddMvc(options =>
             {
                 options.ReturnHttpNotAcceptable = true;
-            })                
+            })
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
