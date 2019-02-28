@@ -31,4 +31,10 @@
     <ProjectReference Include="..\ExampleProject.Dto\ExampleProject.Dto.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ExampleData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
