@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ExampleProject.Common.Helpers;
 using ExampleProject.Core.Person.Interfaces;
 using ExampleProject.Data.Enums;
 using ExampleProject.Dto.Person;
@@ -35,7 +35,7 @@ namespace ExampleProject.Api.Controllers
         [HttpGet("color/{color}")]
         public IActionResult GetPersonByColor(string color)
         {
-            if (!Enum.TryParse<ColorEnum>(color, true, out var colorEnum))
+            if (!color.TryGetValue<ColorEnum>(out var colorEnum))
                 return BadRequest(new { Message = $"Color '{color}' could not be parsed." });
 
             var result = _personManagement.GetPersonsByColor(colorEnum);

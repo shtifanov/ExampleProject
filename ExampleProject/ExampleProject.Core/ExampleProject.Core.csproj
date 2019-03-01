@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ExampleProject.Common\ExampleProject.Common.csproj" />
     <ProjectReference Include="..\ExampleProject.DataAccess\ExampleProject.DataAccess.csproj" />
     <ProjectReference Include="..\ExampleProject.Dto\ExampleProject.Dto.csproj" />
   </ItemGroup>
