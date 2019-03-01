@@ -17,6 +17,14 @@ namespace ExampleProject.Core.Person
             _db = db;
         }
 
+        public PersonDto CreatePerson(PersonToCreateDto person)
+        {
+            var entity = Mapper.Map<Data.Entities.Person>(person);
+            _db.PersonRepository.Add(entity);
+            _db.Save();
+            return Mapper.Map<PersonDto>(entity);
+        }
+
         public IReadOnlyList<PersonDto> GetPersons()
         {
             return Mapper.Instance.ProjectTo<PersonDto>(_db.PersonRepository.Get()).ToList();

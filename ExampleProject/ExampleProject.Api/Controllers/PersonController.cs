@@ -41,5 +41,14 @@ namespace ExampleProject.Api.Controllers
             var result = _personManagement.GetPersonsByColor(colorEnum);
             return Ok(result);
         }
+
+        [HttpPost]
+        public IActionResult CreatePerson([FromBody]PersonToCreateDto person)
+        {
+            if (person == null) return BadRequest(new { Message = "Model could not be parsed." });
+
+            var createdPerson = _personManagement.CreatePerson(person);
+            return CreatedAtAction(nameof(GetPerson), new { id = createdPerson.Id }, createdPerson);
+        }
     }
 }
