@@ -91,12 +91,12 @@ Return example:
 
 ## Tasks:
 
-1.	Read the CSV file and cache in a Json fitting model class (needs to be implemented). Ideally this should happen in a class, that abstracts the access to the file, thus this could be replaced through a simple database.
-2.	Implement the given REST- interface. The interface accesses the persistence class via Dependency Injection.
-3.	Write fitting unit tests for the interface (e.g. GetUsersWithColorTest(), GetAllUsersTest())
+-	[x] Read the CSV file and cache in a Json fitting model class (needs to be implemented). Ideally this should happen in a class, that abstracts the access to the file, thus this could be replaced through a simple database.
+- [x]	Implement the given REST- interface. The interface accesses the persistence class via Dependency Injection.
+- [ ] Write fitting unit tests for the interface (e.g. GetUsersWithColorTest(), GetAllUsersTest())
 
 ## Bonus:
 
-1. Implementation as a MSBuild project for continuous integration on TFS
-2. Implement an additional method POST /persons which adds a new record to the CSV file 
-3. Entity Framework- connection to a SQL database to persist the data
+- [ ] Implementation as a MSBuild project for continuous integration on TFS
+- [x] Implement an additional method POST /persons which adds a new record to the CSV file 
+- [x] Entity Framework- connection to a SQL database to persist the data
